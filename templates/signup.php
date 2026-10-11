@@ -40,6 +40,8 @@
             meilleures recettes avec des milliers de gourmands !
             </p>
 
+            <?php signup(); ?>
+
             <!-- Signup form -->
             <form method="POST" class="col-xl-10">
 
@@ -80,7 +82,7 @@
                 <span class="input-group-text bg-white border-0 ps-4">
                 <i class="fa-solid fa-lock fa-fw text-dark"></i>
                 </span>
-                <input type="password" class="form-control border-0 shadow-none" id="password" name="password" placeholder="Mot de passe" aria-label="Mot de passe" required aria-required="true">
+                <input type="password" class="form-control border-0 shadow-none" minlength="8" id="password" name="password" placeholder="Mot de passe" aria-label="Mot de passe" required aria-required="true">
                 <button type="button" class="btn bg-white border-0 pe-4 text-secondary" aria-label="Afficher le mot de passe">
                 <i class="fa-regular fa-eye"></i>
                 </button>
@@ -98,7 +100,7 @@
             </div>
 
             <!-- Main submit button -->
-            <button type="submit" class="btn btn-danger btn-lg w-100 rounded-pill d-flex align-items-center justify-content-center gap-2 mb-4">
+            <button type="submit" name="btn-signup" id="btn-signup" class="btn btn-danger btn-lg w-100 rounded-pill d-flex align-items-center justify-content-center gap-2 mb-4">
                 <i class="fa-solid fa-user-plus"></i>
                 S'inscrire
             </button>
@@ -130,5 +132,7 @@
 
     </div>
     </section>
+
+    <script src="../../sass/vendors/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
