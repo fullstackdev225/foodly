@@ -2,6 +2,8 @@
 
 error_reporting(E_ERROR | E_PARSE);
 
+session_start();
+
 require_once('../model/User.php');
 
 function auth(){

@@ -40,7 +40,7 @@
             meilleures recettes avec des milliers de gourmands !
             </p>
 
-            <?php signup(); ?>
+           <?php signup(); ?>
 
             <!-- Signup form -->
             <form method="POST" class="col-xl-10">
