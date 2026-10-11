@@ -51,3 +51,40 @@ function userSave(string $lastName, string $firstName, string $email, string $us
     //we redirect to the login page...
     header('Location: login.php');
 }
+
+
+function userAuth(string $username, string $password){
+    //we connect to database...
+    $database = dbConnect();
+
+    //we getting password...
+    $request = $database->prepare('SELECT pass FROM users WHERE username = ?');
+    $request->execute([$username]);
+    $result = $request->fetch();
+
+    //we compare password...
+    $passwordCorrect = password_verify($password, $result['pass']);
+
+    //we verify username...
+    if($result){
+        //we verify password...
+        if($passwordCorrect){
+            $_SESSION['username'] = $username;
+            header('Location: home.php');
+        }
+         else{
+            echo '<div class="alert alert-danger alert-dismissible fs-4">
+                        Identifiants incorrects
+                        <i class="fa-solid fa-circle-xmark text-danger"></i>
+                        <button class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>'; 
+         }
+    }
+     else{
+        echo '<div class="alert alert-danger alert-dismissible fs-4">
+                    Identifiants incorrects
+                    <i class="fa-solid fa-circle-xmark text-danger"></i>
+                     <button class="btn-close" data-bs-dismiss="alert"></button>
+                </div>';
+     }
+}

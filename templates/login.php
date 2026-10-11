@@ -40,6 +40,8 @@
             à partager votre passion pour la cuisine !
             </p>
 
+            <?php auth(); ?>
+
             <!-- Login form -->
             <form method="POST" class="col-xl-11" novalidate>
 
@@ -72,7 +74,7 @@
             </div>
 
             <!-- Main submit button -->
-            <button type="submit" class="btn btn-danger btn-lg w-100 rounded-pill d-flex align-items-center justify-content-center gap-2 mb-4">
+            <button type="submit" name="btn-login" id="btn-login" class="btn btn-danger btn-lg w-100 rounded-pill d-flex align-items-center justify-content-center gap-2 mb-4">
                 <i class="fa-solid fa-right-to-bracket"></i>
                 Se connecter
             </button>
